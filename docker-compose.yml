@@ -1,12 +1,14 @@
 version: '3.7'
 services:
   node:
-    image: woohanx/kfk_node:v3.1
+    cap_add:
+      - ALL
+    image: woohanx/kfk_node:v4
     networks:
-      - testNet3.1
+      - testNet1
     tty: true
     command: python3 /home/apps/script/launch_kfk.py
     environment:
       nodeNum:
 networks:
-  testNet3.1:
+  testNet1:
